@@ -1,7 +1,10 @@
-import Chai from "./chai"
+import Chai from "./chai.jsx"
 function App() {
   return (
-  <Chai/>
+    <>
+    <Chai/>
+    <p>welcome to react flow</p>
+    </>
   )
 }
 
