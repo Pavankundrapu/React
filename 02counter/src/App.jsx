@@ -14,7 +14,10 @@ function App() {
     if(counter >= 20) 
       {setcounter = 20}
     else{
-      setcounter(counter+1);
+      setcounter(counter => counter+1);
+      setcounter(counter => counter+1);
+      setcounter(counter => counter+1);
+      setcounter(counter => counter+1);
     }
   }
 
