@@ -26,6 +26,7 @@ function App() {
   },[length,numberAllowed,characterAllowed,setPassword])
 
   const copyPasswordToClipboard = useCallback(()=>{
+   //to select the text area
     passwordRef.current?.select();
     //to select only a part of our required input
     /*passwordRef.current?.setSelectionRange(0,999);*/
