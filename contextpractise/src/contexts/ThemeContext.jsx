@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
-export const ThemeContext = React.createContext();
+const ThemeContext = React.createContext();
 
-export const ThemeProvider = ({children}) => {
+const ThemeProvider = ({children}) => {
   
     const [User,setUser] = useState(null); 
   
@@ -14,3 +14,5 @@ export const ThemeProvider = ({children}) => {
     </ThemeContext.Provider>
   )
 }
+
+export {ThemeContext,ThemeProvider}
