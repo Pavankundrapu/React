@@ -1,6 +1,6 @@
-import React, {useContext,createContext} from 'react'
+import {useContext,createContext} from 'react'
 
-const TodoContext = React.createContext({
+const TodoContext = createContext({
      todos: 
      [{
        id:1,
@@ -16,7 +16,9 @@ const TodoContext = React.createContext({
 const TodoProvider = TodoContext.Provider
 
 const useTodo = () => {
-  useContext(TodoContext)
+  return(
+    useContext(TodoContext)
+  ) 
 }
 
 export {TodoContext,TodoProvider,useTodo};
