@@ -9,9 +9,9 @@ function App() {
   let link = "https://www.omdbapi.com/?apikey=10203a01&t=";
   let value = link + data;
 
-  function handle(e) {
+  async function handle(e) {
     e.preventDefault();
-    fetch(value)
+   await fetch(value)
       .then(res => res.json())
       .then(info => {
         if (info.Response === "True") {
