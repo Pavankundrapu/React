@@ -1,9 +1,10 @@
 import React, { useState } from "react"
-import { ThemeProvider } from "./contexts/theme"
+import { ThemeProvider } from "./contexts/Theme"
 
 function App() {
 
   const [theme,setTheme] = useState('light');
+  
  
   return (
     <ThemeProvider value={{ThemeMode,lightTheme,darkTheme}}>

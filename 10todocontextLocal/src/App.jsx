@@ -25,6 +25,7 @@ function App() {
 
 
    //for data retrevtion form local storage when we start our project
+   //in local storage we get in the form of string and in order to handle them we use json converter
    useEffect(()=>{
     const todos = JSON.parse(localStorage.getItem("todos"))
 
