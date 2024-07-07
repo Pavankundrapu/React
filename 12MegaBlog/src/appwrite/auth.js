@@ -30,7 +30,7 @@ export class AuthService {
         }
         
       } catch (error) {
-        console.log(error);
+        console.log("Appwrite service error :: createAccount :: error",error);
       }
 
    }
@@ -41,7 +41,7 @@ export class AuthService {
        return await this.account.createEmailPasswordSession(email,password);
       } 
       catch (error) {
-        console.log(error);
+        console.log("Appwrite service error :: login :: error",error);
       }
    } 
   
@@ -50,7 +50,7 @@ export class AuthService {
         return await this.account.get();
       } 
       catch (error) {
-        console.log(error);
+        console.log("Appwrite service error :: getCurrentUser :: error",error);
       }
       //if we didnot get the user we return null
       return null;
@@ -63,7 +63,7 @@ export class AuthService {
           return await this.account.deleteSessions();
         } 
         catch (error) {
-          console.log(error);
+          console.log("Appwrite service error :: logout :: error",error);
         }
     }
 }
