@@ -12,9 +12,8 @@ function App() {
    const dispatch = useDispatch();
   
    useEffect(() => {
-
-    authService.getCurrentUser()
-    .then((userData)=>{
+     authService.getCurrentUser()
+     .then((userData)=>{
       if(userData)
       { 
         dispatch(login({userData}));
@@ -25,7 +24,7 @@ function App() {
       }
     })
     .finally(() => setLoading(false));
-   }, []);
+    }, []);
 
 
 //this is conditional redeering of the component.
