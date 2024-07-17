@@ -5,11 +5,15 @@ function App() {
   const [data, setData] = useState('');
   const [movie, setMovie] = useState(null);
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   let link = "https://www.omdbapi.com/?apikey=10203a01&t=";
   let value = link + data;
 
   async function handle(e) {
+    setLoading(true);
+    setMovie(null);
+    setError(null);
     e.preventDefault();
    await fetch(value)
       .then(res => res.json())
@@ -17,9 +21,11 @@ function App() {
         if (info.Response === "True") {
           setMovie(info);
           setError(null);
+          setLoading(false);
         } else {
           setMovie(null);
           setError(info.Error);
+          setLoading(false);
         }
       })
       .catch(err => {
@@ -37,6 +43,7 @@ function App() {
         required
         value={data}
         onChange={(e) => setData(e.target.value)}
+        onKeyPress={(e) => e.key === 'Enter' && handle(e)}
         className="w-full max-w-md p-2 mb-4 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
       />
       <button
@@ -46,6 +53,7 @@ function App() {
       >
         Search
       </button>
+      {loading? <div>Loading...</div> : null}
       {error && <p className="text-red-500 mt-4">{error}</p>}
       {movie && (
         <div className="mt-6 bg-white p-6 rounded-lg shadow-lg max-w-md w-full">
@@ -64,6 +72,9 @@ function App() {
           </div>
         </div>
       )}
+      
+      
+      
     </div>
   );
 }
