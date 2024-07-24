@@ -33,10 +33,12 @@ function App() {
         setError('An error occurred while fetching the movie data.');
         setMovie(null);
       });
+      
   }
 
   return (
     <div className="App flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
+      <h1 className='font-bold '>Movie Searcher</h1>
       <input
         type="text"
         placeholder="Movie Title"
