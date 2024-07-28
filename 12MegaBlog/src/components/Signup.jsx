@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 import {Link,useNavigate} from 'react-router-dom'
 import {Button,Input,Logo} from './index'
 import authService from '../appwrite/auth'
-import {set, useForm} from 'react-hook-form'
+import { useForm} from 'react-hook-form'
 import { useDispatch } from 'react-redux'
 import { login } from '../store/authSlice'
 
@@ -20,12 +20,9 @@ function Signup() {
       const userData = await authService.createAccount(data)
       if(userData)
       {
-        const userdata = await authService.getCurrentUser(userData)
-        if(userdata)
-        {
-          dispatch(login(userdata))
-          navigate('/')
-        }
+        const userData = await authService.getCurrentUser()
+        if(userData) dispatch(login(userData));
+          navigate('/')    
       }
     } catch (error) {
       setError(error.message)
@@ -86,7 +83,7 @@ function Signup() {
                     />
                     <Button type="submit" className="w-full">
                       Sign Up
-                      </Button>
+                    </Button>
                   </div>
                 </form>
                 </div>
