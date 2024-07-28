@@ -2,7 +2,7 @@ import React,{useCallback} from 'react'
 import { useForm } from 'react-hook-form'
 import service from '../../appwrite/config'
 import {Button,Input,RTE,Select} from '../index'
-import { UNSAFE_DataRouterContext, useNavigate } from 'react-router-dom'
+import {useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
 function PostForm({post}) {
@@ -21,7 +21,7 @@ function PostForm({post}) {
       const navigate = useNavigate()
       const userData = useSelector(state => state.auth.userData)
 
-      const onSubmit = async (data) => {
+      const submit = async (data) => {
         if (data) {
             // Upload file if image exists in data
             const file = data.image[0] ? await service.uploadFile(data.image[0]) : null;
