@@ -6,7 +6,7 @@ import {set, useForm} from 'react-hook-form'
 import { useDispatch } from 'react-redux'
 import { login } from '../store/authSlice'
 
-function SignUp() {
+function Signup() {
   
   const [error,setError] = useState('')
   const navigate = useNavigate()
@@ -94,4 +94,4 @@ function SignUp() {
   )
 }
 
-export default SignUp
+export default Signup
