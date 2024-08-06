@@ -11,6 +11,7 @@ export default function({name,control,label,defaultValue=""}) {
        control={control}
        render={({field : {onChange}})=>(
         <Editor
+         apiKey='moup3s6oge927qw2qqs6i69enddbi5jsufpb2szjre654i40'
          initialValue={defaultValue}
          init={{
           height: 500,
